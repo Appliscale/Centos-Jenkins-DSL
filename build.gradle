@@ -42,14 +42,6 @@ dependencies {
     // plugins to install in test instance
     testPlugins 'org.jenkins-ci.plugins:ghprb:1.31.4'
     testPlugins 'com.coravy.hudson.plugins.github:github:1.19.0'
-
-    // for the RestApiScriptRunner
-    compile('org.codehaus.groovy.modules.http-builder:http-builder:0.7.2') {
-        exclude(module: 'groovy')
-    }
-
-    // for the RestApiScriptRunner
-    compile('org.apache.ant:ant:1.9.7')
 }
 
 task resolveTestPlugins(type: Copy) {
@@ -74,12 +66,6 @@ test {
     systemProperty 'buildDirectory', project.buildDir.absolutePath
 }
 
-task rest(dependsOn: 'classes', type: JavaExec) {
-    main = 'com.dslexample.rest.RestApiScriptRunner'
-    classpath = sourceSets.main.runtimeClasspath
-    systemProperties System.getProperties()
-}
-
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.14'
+    gradleVersion = '3.1'
 }

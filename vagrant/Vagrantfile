@@ -1,0 +1,19 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  
+    # Set environment 
+    config.vm.define "centos_jenkins_dsl" do |centos_jenkins_dsl|
+        centos_jenkins_dsl.vm.box = "centos/7"
+        centos_jenkins_dsl.vm.provision :shell, path: "bootstrap.sh"
+        centos_jenkins_dsl.vm.network :forwarded_port, guest: 9001, host: 9001
+        centos_jenkins_dsl.vm.hostname = "centos-jenkins-dsl.com"
+        centos_jenkins_dsl.vm.network "private_network", ip: "192.168.50.50"
+        centos_jenkins_dsl.vm.synced_folder "../", "/home/vagrant/centos-jenkins-dsl"
+        centos_jenkins_dsl.vm.provider :virtualbox do |vb|
+            vb.customize ["modifyvm", :id, "--memory", 1048]
+            vb.customize ["modifyvm", :id, "--cpus", 1]
+        end
+    end
+end
