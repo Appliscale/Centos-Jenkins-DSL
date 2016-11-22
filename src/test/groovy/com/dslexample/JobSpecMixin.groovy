@@ -1,4 +1,4 @@
-package com.dslexample
+package dsl.jobBuilder
 
 import javaposse.jobdsl.dsl.JobManagement
 import javaposse.jobdsl.dsl.JobParent

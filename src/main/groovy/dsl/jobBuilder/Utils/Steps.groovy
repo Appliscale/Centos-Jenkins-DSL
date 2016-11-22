@@ -1,6 +1,6 @@
-package com.dslexample
+package dsl.jobBuilder.Utils
 
-class StepsUtil {
+class Steps {
 
     static void proxiedGradle(context, String gradleTasks) {
         context.with {

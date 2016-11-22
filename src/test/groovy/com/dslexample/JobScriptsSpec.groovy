@@ -1,4 +1,4 @@
-package com.dslexample
+package dsl.jobBuilder
 
 import groovy.io.FileType
 import hudson.model.Item

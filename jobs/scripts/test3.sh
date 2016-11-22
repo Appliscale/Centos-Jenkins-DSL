@@ -1,0 +1,1 @@
+echo "Message from test3.sh"

@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
 
 JAVA_VERSION=1.7.0
-JENKINS_VERSION=2.28
+JENKINS_VERSION=2.33
 JENKINS_HOME=/var/lib/jenkins
 JENKINS_PORT=9001
-GROOVY_VERSION=2.4.7
 SYNC_FOLDER=centos-jenkins-dsl/vagrant
 # Default user for jenkins
 USER_NAME="admin2"
@@ -40,14 +39,6 @@ source /etc/profile
 echo $JAVA_HOME
 echo $JRE_HOME
 
-## SDKMAN installation
-#curl -s get.sdkman.io > $HOME/install_sdk.sh
-#sh install_sdk.sh
-#source "$HOME/.sdkman/bin/sdkman-init.sh"
-# Groovy installation
-#yes y | sdk install groovy $GROOVY_VERSION
-#groovy -version
-
 JENKINS_RPM=jenkins-${JENKINS_VERSION}.rpm
 
 if [[ ! -d $SYNC_FOLDER ]]; then
@@ -57,6 +48,10 @@ fi
 # Download Jenkins
 if [[ ! -e $SYNC_FOLDER/$JENKINS_RPM  ]]; then
 	sudo wget --progress=bar:force -O $SYNC_FOLDER/$JENKINS_RPM http://pkg.jenkins-ci.org/redhat/jenkins-${JENKINS_VERSION}-1.1.noarch.rpm
+    if [[ ! -e $SYNC_FOLDER/$JENKINS_RPM ]]; then
+        echo "\e[31mCouldn't download jenkins rpm\e[0m"
+        exit
+    fi
 fi
 
 if ! rpm -qa | grep -qw jenkins; then
