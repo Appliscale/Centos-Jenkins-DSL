@@ -123,8 +123,8 @@ echo "jenkins.model.Jenkins.instance.securityRealm.createAccount('$USER_NAME', '
 bash $SYNC_FOLDER/install_plugins.sh $JENKINS_PASS
 
 # Create seed job
-java -jar $SYNC_FOLDER/jenkins-cli.jar -s http://127.0.0.1:${JENKINS_PORT}/ \
-create-job seed_job < $SYNC_FOLDER/seed_job.xml --username admin --password $JENKINS_PASS
+java -jar /home/vagrant/$SYNC_FOLDER/jenkins-cli.jar -s http://127.0.0.1:${JENKINS_PORT}/ \
+create-job seed_job < /home/vagrant/$SYNC_FOLDER/seed_job.xml --username admin --password $JENKINS_PASS
 
 # # Print logins
 echo "Users: "

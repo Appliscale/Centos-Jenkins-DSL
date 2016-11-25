@@ -4,12 +4,12 @@
   <description></description>
   <keepDependencies>false</keepDependencies>
   <properties>
-    <com.sonyericsson.rebuild.RebuildSettings plugin="rebuild@1.25">
+    <com.sonyericsson.rebuild.RebuildSettings>
       <autoRebuild>false</autoRebuild>
       <rebuildDisabled>false</rebuildDisabled>
     </com.sonyericsson.rebuild.RebuildSettings>
   </properties>
-  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.0.1">
+  <scm class="hudson.plugins.git.GitSCM">
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
@@ -32,20 +32,7 @@
   <triggers/>
   <concurrentBuild>false</concurrentBuild>
   <builders>
-    <hudson.plugins.gradle.Gradle plugin="gradle@1.25">
-      <description></description>
-      <switches></switches>
-      <tasks>clean test</tasks>
-      <rootBuildScriptDir></rootBuildScriptDir>
-      <buildFile></buildFile>
-      <gradleName>(Default)</gradleName>
-      <useWrapper>true</useWrapper>
-      <makeExecutable>false</makeExecutable>
-      <fromRootBuildScriptDir>true</fromRootBuildScriptDir>
-      <useWorkspaceAsHome>false</useWorkspaceAsHome>
-      <passAsProperties>false</passAsProperties>
-    </hudson.plugins.gradle.Gradle>
-    <javaposse.jobdsl.plugin.ExecuteDslScripts plugin="job-dsl@1.53">
+    <javaposse.jobdsl.plugin.ExecuteDslScripts>
       <targets>jobs/*.groovy</targets>
       <usingScriptText>false</usingScriptText>
       <ignoreExisting>false</ignoreExisting>
@@ -59,61 +46,7 @@
     </javaposse.jobdsl.plugin.ExecuteDslScripts>
   </builders>
   <publishers>
-    <hudson.plugins.chucknorris.CordellWalkerRecorder plugin="chucknorris@1.0">
-      <factGenerator/>
-    </hudson.plugins.chucknorris.CordellWalkerRecorder>
-  </publishers>
-  <buildWrappers/>
-[vagrant@centos-jenkins-dsl seed_job]$ cat config.xml 
-<?xml version='1.0' encoding='UTF-8'?>
-<project>
-  <actions/>
-  <description></description>
-  <keepDependencies>false</keepDependencies>
-  <properties>
-    <com.sonyericsson.rebuild.RebuildSettings plugin="rebuild@1.25">
-      <autoRebuild>false</autoRebuild>
-      <rebuildDisabled>false</rebuildDisabled>
-    </com.sonyericsson.rebuild.RebuildSettings>
-  </properties>
-  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.0.1">
-    <configVersion>2</configVersion>
-    <userRemoteConfigs>
-      <hudson.plugins.git.UserRemoteConfig>
-        <url>file:///home/vagrant/centos-jenkins-dsl/</url>
-      </hudson.plugins.git.UserRemoteConfig>
-    </userRemoteConfigs>
-    <branches>
-      <hudson.plugins.git.BranchSpec>
-        <name>*/master</name>
-      </hudson.plugins.git.BranchSpec>
-    </branches>
-    <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
-    <submoduleCfg class="list"/>
-    <extensions/>
-  </scm>
-  <canRoam>true</canRoam>
-  <disabled>false</disabled>
-  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
-  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
-  <triggers/>
-  <concurrentBuild>false</concurrentBuild>
-  <builders>
-    <javaposse.jobdsl.plugin.ExecuteDslScripts plugin="job-dsl@1.53">
-      <targets>jobs/*.groovy</targets>
-      <usingScriptText>false</usingScriptText>
-      <ignoreExisting>false</ignoreExisting>
-      <ignoreMissingFiles>false</ignoreMissingFiles>
-      <failOnMissingPlugin>false</failOnMissingPlugin>
-      <unstableOnDeprecation>false</unstableOnDeprecation>
-      <removedJobAction>IGNORE</removedJobAction>
-      <removedViewAction>IGNORE</removedViewAction>
-      <lookupStrategy>JENKINS_ROOT</lookupStrategy>
-      <additionalClasspath>src/main/groovy</additionalClasspath>
-    </javaposse.jobdsl.plugin.ExecuteDslScripts>
-  </builders>
-  <publishers>
-    <hudson.plugins.chucknorris.CordellWalkerRecorder plugin="chucknorris@1.0">
+    <hudson.plugins.chucknorris.CordellWalkerRecorder>
       <factGenerator/>
     </hudson.plugins.chucknorris.CordellWalkerRecorder>
   </publishers>
