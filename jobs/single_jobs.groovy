@@ -1,7 +1,7 @@
-import dsl.jobBuilder.BaseJobBuilder
-import dsl.jobBuilder.Utils.Steps
-import dsl.jobBuilder.Utils.Scm
-import static dsl.jobBuilder.Utils.Param.requiredString
+import jobBuilder.BaseJobBuilder
+import jobBuilder.Utils.Steps
+import jobBuilder.Utils.Scm
+import static jobBuilder.Utils.Param.requiredString
 
 String directory = 'Job-examples-1'
 String repository = 'file:///home/vagrant/centos-jenkins-dsl/'

@@ -1,9 +1,8 @@
-package dsl.jobBuilder
+package jobBuilder
 
 import javaposse.jobdsl.dsl.JobManagement
 import javaposse.jobdsl.dsl.JobParent
 import javaposse.jobdsl.dsl.MemoryJobManagement
-
 
 class JobSpecMixin {
 

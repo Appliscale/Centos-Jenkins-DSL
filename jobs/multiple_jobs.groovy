@@ -1,4 +1,4 @@
-import dsl.jobBuilder.BaseJobBuilder
+import jobBuilder.BaseJobBuilder
 
 String directory = 'Job-examples-2'
 folder(directory) {
@@ -25,7 +25,7 @@ folder(directory) {
         repository: 'file:///home/vagrant/centos-jenkins-dsl/',
         branch: 'master',
         gitTag:'GIT_TAG_3',
-        script:'test3.sh',
+        script:'test3.sh'
     ]
 ].each { Map config ->
     new BaseJobBuilder(

@@ -1,10 +1,10 @@
-package dsl.jobBuilder
+package jobBuilder
 
 import javaposse.jobdsl.dsl.DslFactory
 import javaposse.jobdsl.dsl.Job
-import static dsl.jobBuilder.Utils.Param.requiredString
-import dsl.jobBuilder.Utils.Steps
-import dsl.jobBuilder.Utils.Scm
+import static jobBuilder.Utils.Param.requiredString
+import jobBuilder.Utils.Steps
+import jobBuilder.Utils.Scm
 
 class BaseJobBuilder {
 
