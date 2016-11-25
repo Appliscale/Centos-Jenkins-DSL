@@ -2,8 +2,10 @@
 This project was created in order to test Jenkins Job DSL plugin and to provide local instance of Jenkins for experiments - before we deploy our jobs on production we need to check if they are working correctly. Centos-Jenkins-DSL is exactly that, after you set up everything you will get your own instance on http://localhost:9001 with seed job pointing to local git repository where you store your configuration. 
 
 ## Requirements
-    - vagrant: [How to Install](https://www.vagrantup.com/docs/installation/) 
-    - virtualbox: [How to install](https://www.virtualbox.org/wiki/Downloads)
+   vagrant:    [Instructions](https://www.vagrantup.com/docs/installation/) 
+   
+   virtualbox: [Instructions](https://www.virtualbox.org/wiki/Downloads)
+   
 ## How to use
 After successful instalation of Vagrant and VirtualBox it's time to run the project: 
 ```bash
