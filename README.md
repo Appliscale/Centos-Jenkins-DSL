@@ -86,11 +86,11 @@ During provisioning process this file will be used to create seed job via `jenki
 ### Plugin installation
 Discussed earlier - check [install_plugin.sh](#install_pluginssh) under vagrant section.
 ### Seed Job
-It's possible that seed job will not be created at first - in this case run in followng in command in your terminal:
+It's possible that seed job will not be created at first - in this case run followng command in your terminal:
 ```bash
 $ vagrant ssh
 $ cd centos-jenkins-dsl/vagrant
-$ create_seed_job.sh
+$ ./create_seed_job.sh
 ```
 ### Jenkins rpm
 Sometimes all rpm mirrors are not available and you may need to wait a bit (about 1h) for them to kick in. Another solution is to get rpm from another source, in this case you need to copy the file into vagrant directory and remember to change its name to following format:
