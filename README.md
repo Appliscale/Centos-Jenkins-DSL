@@ -7,18 +7,20 @@ This project was created in order to test Jenkins Job DSL plugin and to provide 
    virtualbox: [Instructions](https://www.virtualbox.org/wiki/Downloads)
    
 ## How to use
+**All `vagrant` commands must be run from `vagrant` directory on host machine.** 
+
 After successful instalation of Vagrant and VirtualBox it's time to run the project: 
 ```bash
-$ git clone reponame
+$ git clone git@github.com:mwpolcik/Centos-Jenkins-DSL.git
 $ cd vagrant
 # This may take few minutes
 $ vagrant up
 ```
-In order to save the machine for later use run following command from `vagrant` directory:
+In order to save the machine for later use run:
 ```bash
 $ vagrant suspend
 ```
-In case you want to completely get rid of VM run from `vagrant` directory:
+In case you want to completely get rid of VM run:
 ```bash
 $ vagrant destroy
 ```
