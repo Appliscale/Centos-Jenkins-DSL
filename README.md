@@ -45,7 +45,7 @@ VM will be created with following parameters from Vagrantfile:
     - memory: 1048
     - cpu: 1
     - provision: bootstrap.sh
-You can modify every option in Vagrantfile, but keep in mind that this Jenkins instance is set to run on port 9001(default 8080). In case you want to switch it different port, then you need to also modify variable `JENKINS_PORT` in `vagrant/bootstrap.sh`.
+You can modify every option in Vagrantfile, but keep in mind that this Jenkins instance is set to run on port 9001(default is 8080). In case you want to switch to different port, then you also need to modify variable `JENKINS_PORT` in `vagrant/bootstrap.sh`.
 
 ### bootstrap.sh
 This script is responsible for provisioning VM, installing and configuring Jenkins, etc.. Following parameters are located at the beginning of the file:
@@ -55,11 +55,10 @@ This script is responsible for provisioning VM, installing and configuring Jenki
     - JENKINS_PORT=9001
     - SYNC_FOLDER=centos-jenkins-dsl/vagrant
     
-In order to log in into Jenkins there are two users:
+In order to log in into Jenkins there you can use two users:
 
-    1. admin - password generated during installation.
+    1. admin - password generated during installation and displayed at the end of installation.
     2. Created in bootstrap.sh via jenkins-cli: `admin2/123456`.
-Password for `admin` user will be displayed at the end of installation.
 
 ### install_plugins.sh
 This script is responsible for installing Jenkins plugins.
@@ -85,7 +84,7 @@ During provisioning process this file will be used to create seed job via `jenki
 
 ## Troubleshooting
 ### Plugin installation
-Discussed earlier - check `install_plugin.sh` under vagrant section.
+Discussed earlier - check [install_plugin.sh](#install_pluginssh) under vagrant section.
 ### Seed Job
 It's possible that seed job will not be created at first - in this case run in followng in command in your terminal:
 ```bash
