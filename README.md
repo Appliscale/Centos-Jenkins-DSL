@@ -31,11 +31,22 @@ $ vagrant destroy
 │    ├── main
 │    └── test
 └── vagrant
+├── gradlew
 ```
-## jobs
+## jobs - dir
 This folder contains dsl scripts that will be used to create Jenkins jobs. Seed job will run .groovy files located in this directory and build new jobs based on your configuration. 
 
-## vagrant
+## src - dir
+   - main contains classes used for job creation
+   - test contains classes used for testing dsl groovy scripts and building xml files
+
+## gradlew - script
+The gradle wrapper used for invoking tests, usage:
+```bash
+./gradlew test
+```
+
+## vagrant -dir
 ### Vagrantfile
 VM will be created with following parameters from Vagrantfile:
 
