@@ -2,17 +2,12 @@ package jobBuilder.Utils
 
 class Steps {
 
-    static void proxiedGradle(context, String gradleTasks) {
+    static void proxiedGradle(context, String gradleTasks,String gradleSwitches = null) {
         context.with {
             gradle {
                 useWrapper true
                 tasks gradleTasks
-                switches '''
-                    -Dhttp.proxyHost=xxx
-                    -Dhttps.proxyHost=xxx
-                    -Dhttp.proxyPort=xxx
-                    -Dhttps.proxyPort=xxx
-                '''.stripIndent().trim()
+                switches gradleSwitches?.stripIndent()?.trim()
             }
         }
     }
