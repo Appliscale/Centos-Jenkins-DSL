@@ -26,6 +26,7 @@ job("$directory/built-simple") {
     configure { project -> 
         project / 'properties' / 'hudson.model.ParametersDefinitionProperty' / parameterDefinitions << 'hudson.plugins.validating__string__parameter.ValidatingStringParameterDefinition' {
             name('IMPORTANT_GIT_TAG')
+            regex(".+")
             defaultValue(null)
             failedValidationMessage('Warning!')
             description('''

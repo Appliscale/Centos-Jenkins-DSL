@@ -5,7 +5,7 @@ class Param {
     static Closure requiredString(
         String _name,
         String _defaultValue=null,
-        String _regex="",
+        String _regex=".+",
         String _failedValidationMessage="You must set this!",
         String _description="") {
             return {
