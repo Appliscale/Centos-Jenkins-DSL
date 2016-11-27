@@ -26,8 +26,8 @@ class BaseJobBuilder {
             }
             parameters {
                 booleanParam 'NOTIFY_QA', true, ""
-            }
-            configure requiredString(gitTag)
+                configure requiredString(gitTag)
+            }            
             steps {
                 shell(dslFactory.readFileFromWorkspace(getScript()))
                 Steps.proxiedGradle(delegate, gradleTasks)
