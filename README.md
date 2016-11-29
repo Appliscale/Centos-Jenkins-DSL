@@ -4,11 +4,10 @@
 <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Groovy-logo.svg" width="120">
 
 ## Centos-Jenkins-DSL
-This project was created in order to test Jenkins Job DSL plugin and to provide local instance of Jenkins for experiments - before we deploy our jobs on production we need to check if they are working correctly. Centos-Jenkins-DSL is exactly that, after you set up everything you will get your own Jenkins instance on Centos 7 available at http://localhost:9001 with seed job pointing to this local git repository where you store your configuration. 
+This project was created in order to test Jenkins Job DSL plugin and to provide local instance of Jenkins for experiments - before we deploy our jobs on production we need to check if they are working correctly. Centos-Jenkins-DSL is exactly that, after you set up everything you will get your own Jenkins instance on Centos 7 available at http://localhost:9001 with seed job pointing to this local git repository where you store your configuration.
 
 ## End Result
-After you configure your jobs in Groovy scripts you will be able to create/update the all from one seed job in Jenkins.
-
+This is how creating many jobs from one seed job looks like:
 
 <img src="https://github.com/mwpolcik/mwpolcik.github.io/blob/master/Jenkins-DSL.gif">
 
