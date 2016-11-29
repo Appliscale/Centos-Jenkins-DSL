@@ -8,6 +8,8 @@ This project was created in order to test Jenkins Job DSL plugin and to provide 
 
 ## End Result
 After you configure your jobs in Groovy scripts you will be able to create/update the all from one seed job in Jenkins.
+
+
 <img src="https://github.com/mwpolcik/mwpolcik.github.io/blob/master/Jenkins-DSL.gif">
 
 ## Requirements
