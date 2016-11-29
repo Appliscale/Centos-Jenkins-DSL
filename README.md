@@ -1,6 +1,6 @@
+<img src="https://www.hashicorp.com/images/blog/a-new-look-for-vagrant/logo_wide-56017ded.png" width="150">
 <img src="https://wiki.centos.org/ArtWork/Brand/Logo?action=AttachFile&do=get&target=centos-logo-light-rtm.svg" width="150">
 <img src="http://ftp.icm.edu.pl/packages/jenkins/art/jenkins-logo/256x256/logo+title.png" width="150">
-<img src="https://www.hashicorp.com/images/blog/a-new-look-for-vagrant/logo_wide-56017ded.png" width="150">
 <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Groovy-logo.svg" width="120">
 
 ## Centos-Jenkins-DSL
