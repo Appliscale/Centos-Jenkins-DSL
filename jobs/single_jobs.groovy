@@ -39,7 +39,7 @@ job("$directory/built-simple") {
         shell(readFileFromWorkspace('jobs/scripts/test.sh'))
         gradle {
             useWrapper true
-            tasks 'clean test'
+            tasks 'sayHello'
             switches '''
                 -Dhttp.proxyHost=proxy.example.com
                 -Dhttps.proxyHost=proxy.example.com
@@ -64,7 +64,7 @@ job("$directory/built-with-utils") {
     configure requiredString('IMPORTANT_GIT_TAG')
     steps {
         shell(readFileFromWorkspace('jobs/scripts/test.sh'))
-        Steps.proxiedGradle(delegate, 'clean test')
+        Steps.proxiedGradle(delegate, 'sayHello')
     }
     publishers {
         chucknorris()
@@ -78,5 +78,5 @@ new BaseJobBuilder(
     branch: 'master',
     gitTag: 'IMPORTANT_GIT_TAG',
     script: 'test.sh',
-    gradleTasks: 'clean test'
+    gradleTasks: 'sayHello'
 ).build(this)

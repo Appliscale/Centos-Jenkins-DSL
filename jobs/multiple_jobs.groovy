@@ -35,6 +35,6 @@ folder(directory) {
         branch: config.branch,
         gitTag: config.gitTag,
         script: config.script,
-        gradleTasks: 'clean test'
+        gradleTasks: 'sayHello'
     ).build(this)
 }
