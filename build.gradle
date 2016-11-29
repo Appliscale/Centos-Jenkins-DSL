@@ -66,6 +66,10 @@ test {
     systemProperty 'buildDirectory', project.buildDir.absolutePath
 }
 
+task sayHello {
+    doLast { println 'Hello from gradle' }
+}
+
 task wrapper(type: Wrapper) {
     gradleVersion = '3.1'
 }
