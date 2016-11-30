@@ -127,13 +127,17 @@ $ vagrant provision
 ```
 
 ## Source
+
 Initial project was based on examples presented in this repository:
 - https://github.com/sheehan/job-dsl-gradle-example
+
 ## Jenkins
 Official Jenkins website:
 https://jenkins.io/
+
 ## Job Dsl Plugin
 Link to plugin:
 - https://wiki.jenkins-ci.org/display/JENKINS/Job+DSL+Plugin
+
 Documentation for Job Dsl Plugin **recommended** by all means: 
 - https://jenkinsci.github.io/job-dsl-plugin/ 
