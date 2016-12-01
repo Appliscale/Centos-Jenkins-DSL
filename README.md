@@ -59,6 +59,7 @@ The gradle wrapper used for invoking tests, usage:
 ```bash
 ./gradlew test
 ```
+After that you will find config.xml files for each job in `build/debug-xml/jobs/'.
 
 ## vagrant -dir
 ### Vagrantfile
