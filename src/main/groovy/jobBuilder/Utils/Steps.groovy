@@ -2,7 +2,7 @@ package jobBuilder.Utils
 
 class Steps {
 
-    static void proxiedGradle(context, String gradleTasks,String gradleSwitches = "") {
+    static void gradle(context, String gradleTasks,String gradleSwitches = "") {
         context.with {
             gradle {
                 useWrapper true

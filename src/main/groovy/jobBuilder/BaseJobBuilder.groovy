@@ -30,7 +30,7 @@ class BaseJobBuilder {
             }            
             steps {
                 shell(dslFactory.readFileFromWorkspace(getScript()))
-                Steps.proxiedGradle(delegate, gradleTasks)
+                Steps.gradle(delegate, gradleTasks)
             }
             publishers {
                 chucknorris()

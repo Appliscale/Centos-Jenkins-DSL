@@ -64,7 +64,7 @@ job("$directory/built-with-utils") {
     configure requiredString('IMPORTANT_GIT_TAG')
     steps {
         shell(readFileFromWorkspace('jobs/scripts/test.sh'))
-        Steps.proxiedGradle(delegate, 'sayHello')
+        Steps.gradle(delegate, 'sayHello')
     }
     publishers {
         chucknorris()
