@@ -128,13 +128,17 @@ $ vagrant provision
 ```
 
 ### Disable script security for Job DSL scripts
-From job-dsl 1.60 version you need to approve the scripts if you want to run `seed_job`. There is an additional build step - small groovy script - in `seed_job.xml` which will disable script security for Job DSL scripts. In case you want to disable it by hand you should go to Manage Jenkins -> Global Configuration -> uncheck `Enable script security for Job DSL scripts`.
+From job-dsl 1.60 version you need to approve the scripts if you want to run `seed_job`. There is an additional build step - small groovy script - in `seed_job.xml` which will disable script security for Job DSL scripts: 
 ```groovy
 import javaposse.jobdsl.plugin.GlobalJobDslSecurityConfiguration
 import jenkins.model.GlobalConfiguration
 
 GlobalConfiguration.all().get(GlobalJobDslSecurityConfiguration.class).useScriptSecurity=false
 ```
+In case you want to disable security `feature` in production environment you should check available options here:
+https://github.com/jenkinsci/job-dsl-plugin/wiki/Migration#migrating-to-160
+
+You can also it by hand you by going to Manage Jenkins -> Global Configuration -> uncheck `Enable script security for Job DSL scripts`.
 
 ## Source
 
