@@ -1,4 +1,4 @@
-<img src="https://www.hashicorp.com/images/blog/a-new-look-for-vagrant/logo_wide-56017ded.png" width="150">
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Vagrant.png" width="100">
 <img src="https://wiki.centos.org/ArtWork/Brand/Logo?action=AttachFile&do=get&target=centos-logo-light-rtm.svg" width="150">
 <img src="http://ftp.icm.edu.pl/packages/jenkins/art/jenkins-logo/256x256/logo+title.png" width="150">
 <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Groovy-logo.svg" width="120">
@@ -126,6 +126,10 @@ In case you had some problems during initial provisioning run following command 
 ```bash
 $ vagrant provision
 ```
+
+### Disable script security for Job DSL scripts
+From job-dsl 1.60 version you need to approve the scripts if you want to run `seed_job`. There is an additional build step - small groovy script - in `seed_job.xml` which will disable script security for Job DSL scripts. In case you want to disable it by hand you should go to Manage Jenkins -> Global Configuration -> uncheck `Enable script security for Job DSL scripts`.
+
 
 ## Source
 
