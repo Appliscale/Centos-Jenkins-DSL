@@ -32,6 +32,24 @@
   <triggers/>
   <concurrentBuild>false</concurrentBuild>
   <builders>
+        <javaposse.jobdsl.plugin.ExecuteDslScripts plugin="job-dsl@1.63">
+      <scriptText>
+        import javaposse.jobdsl.plugin.GlobalJobDslSecurityConfiguration
+        import jenkins.model.GlobalConfiguration
+
+        GlobalConfiguration.all().get(GlobalJobDslSecurityConfiguration.class).useScriptSecurity=false
+      </scriptText>
+      <usingScriptText>true</usingScriptText>
+      <sandbox>false</sandbox>
+      <ignoreExisting>false</ignoreExisting>
+      <ignoreMissingFiles>false</ignoreMissingFiles>
+      <failOnMissingPlugin>false</failOnMissingPlugin>
+      <unstableOnDeprecation>false</unstableOnDeprecation>
+      <removedJobAction>IGNORE</removedJobAction>
+      <removedViewAction>IGNORE</removedViewAction>
+      <removedConfigFilesAction>IGNORE</removedConfigFilesAction>
+      <lookupStrategy>JENKINS_ROOT</lookupStrategy>
+    </javaposse.jobdsl.plugin.ExecuteDslScripts>
     <javaposse.jobdsl.plugin.ExecuteDslScripts>
       <targets>jobs/*.groovy</targets>
       <usingScriptText>false</usingScriptText>

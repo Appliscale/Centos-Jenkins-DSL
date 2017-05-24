@@ -45,8 +45,11 @@ plugins=(
     rebuild
     jobConfigHistory
     cloudbees-folder
-    gradle 
+    gradle
+    authorize-project
     chucknorris
+    maven-plugin
+    jobConfigHistory
     )
 
 for plugin in "${plugins[@]}"

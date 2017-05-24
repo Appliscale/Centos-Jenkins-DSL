@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
-JAVA_VERSION=1.7.0
-JENKINS_VERSION=2.33
+JAVA_VERSION=1.8.0
+JENKINS_VERSION=2.62
 JENKINS_HOME=/var/lib/jenkins
 JENKINS_PORT=9001
 SYNC_FOLDER=centos-jenkins-dsl/vagrant
+
 # Default user for jenkins
 USER_NAME="admin2"
 USER_PASS="123456"
@@ -85,6 +86,7 @@ fi
 
 # Wait for jenkins to start and download cli
 echo "Downloading jenkins-cli.jar"
+WGET_TIMEOUT=0
 while true;do
     wget --quiet -P $SYNC_FOLDER/  http://localhost:${JENKINS_PORT}/jnlpJars/jenkins-cli.jar
     rc=$?
@@ -94,7 +96,7 @@ while true;do
         break
     elif [ "$rc" -ne "0" ]; then
         echo "$(($WGET_TIMEOUT+1)) retry ..."
-        WGET_TIMEOUT=$((WGET_TIMEOUT + 1))
+        WGET_TIMEOUT=$((WGET_TIMEOUT+1))
     elif [ -f $JENKINS_CLI ]; then
         echo "jenkins-cli.jar downloaded"
         break
