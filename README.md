@@ -75,8 +75,8 @@ You can modify every option in Vagrantfile, but keep in mind that this Jenkins i
 
 ### bootstrap.sh
 This script is responsible for provisioning VM, installing and configuring Jenkins, etc.. Following parameters are located at the beginning of the file:
-    - JAVA_VERSION=1.7.0
-    - JENKINS_VERSION=2.33
+    - JAVA_VERSION=1.8.0
+    - JENKINS_VERSION=2.62
     - JENKINS_HOME=/var/lib/jenkins
     - JENKINS_PORT=9001
     - SYNC_FOLDER=centos-jenkins-dsl/vagrant
@@ -128,7 +128,7 @@ $ vagrant provision
 ```
 
 ### Disable script security for Job DSL scripts
-From job-dsl 1.60 version you need to approve the scripts if you want to run `seed_job`. There is an additional build step - small groovy script - in `seed_job.xml` which will disable script security for Job DSL scripts: 
+From job-dsl 1.60 version you need to approve the scripts if you want to run `seed_job`. There is an additional build step - tiny groovy snippet - in `seed_job.xml` which will disable script security for Job DSL scripts: 
 ```groovy
 import javaposse.jobdsl.plugin.GlobalJobDslSecurityConfiguration
 import jenkins.model.GlobalConfiguration
@@ -138,7 +138,7 @@ GlobalConfiguration.all().get(GlobalJobDslSecurityConfiguration.class).useScript
 In case you want to disable security `feature` in production environment you should check available options here:
 https://github.com/jenkinsci/job-dsl-plugin/wiki/Migration#migrating-to-160
 
-You can also it by hand you by going to Manage Jenkins -> Global Configuration -> uncheck `Enable script security for Job DSL scripts`.
+You can also disable it by going to Manage Jenkins -> Global Configuration -> uncheck `Enable script security for Job DSL scripts`.
 
 ## Source
 
