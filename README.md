@@ -138,7 +138,7 @@ GlobalConfiguration.all().get(GlobalJobDslSecurityConfiguration.class).useScript
 In case you want to disable security `feature` in production environment you should check available options here:
 https://github.com/jenkinsci/job-dsl-plugin/wiki/Migration#migrating-to-160
 
-You can also disable it by going to Manage Jenkins -> Global Configuration -> uncheck `Enable script security for Job DSL scripts`.
+You can also disable it by going to Manage Jenkins -> Configure Global Security -> uncheck `Enable script security for Job DSL scripts`.
 
 ## Source
 
