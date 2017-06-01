@@ -25,7 +25,7 @@ This is how creating many jobs from one seed job looks like:
 
 After successful instalation of Vagrant and VirtualBox it's time to run the project: 
 ```bash
-$ git clone git@github.com:mwpolcik/Centos-Jenkins-DSL.git
+$ git clone https://github.com/Appliscale/Centos-Jenkins-DSL.git
 $ cd vagrant
 # This may take few minutes
 $ vagrant up
